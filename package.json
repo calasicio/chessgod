@@ -8,9 +8,10 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "watch": "node scripts/build.mjs --watch",
-    "ext-build": "web-ext build --source-dir ./dist",
     "dev": "npm run build -- --watch & web-ext run --source-dir=dist",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "ext-build": "web-ext build --source-dir=dist --artifacts-dir=web-ext-artifacts --overwrite-dest",
+    "release": "npm run typecheck && npm run build && npm run ext-build"
   },
   "dependencies": {
     "@types/firefox-webext-browser": "^143.0.0",

@@ -1,5 +1,5 @@
 import * as esbuild from "esbuild";
-import { cp, mkdir } from "node:fs/promises";
+import { cp, mkdir, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
@@ -48,6 +48,7 @@ const buildOptions = {
 };
 
 async function copyStatic() {
+  await rm("dist", { recursive: true, force: true });
   await mkdir("dist", { recursive: true });
   await cp("public", "dist", { recursive: true });
   await cp("src/vendor", "dist/vendor", { recursive: true });
