@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ChessGod",
-  "version": "0.0.1",
+  "version": "0.1.0",
 
   "description": "An extensively configurable chess bot extension for chess.com",
 
@@ -14,7 +14,8 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "calasicio@gmail.com",
+      "id": "chessgod@calasicio.com",
+      "update_url": "https://raw.githubusercontent.com/calasicio/chessgod/main/updates.json",
       "data_collection_permissions": {
         "required": ["none"]
       }
