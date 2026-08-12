@@ -28,6 +28,7 @@ The code and content in this repository are provided "as is" without any warrant
 - [How to Use](#how-to-use)
 - [Cloning](#cloning)
 - [Roadmap](#roadmap)
+- [License](#license)
 - [Credits](#credits)
 
 ## Features
@@ -50,6 +51,14 @@ The code and content in this repository are provided "as is" without any warrant
 - [ ] Release?
 - [ ] Skill-level customization panel
 - [ ] Calibration against real player data
+
+## License
+
+Licensed under PolyForm Noncommercial 1.0.0.
+
+You can fork, modify, and redistribute this freely for non-commercial
+purposes. You just can't sell it, paywall it, or bundle it into a paid
+product/service. See [LICENSE](./LICENSE.md) for full terms.
 
 ## Credits
 
