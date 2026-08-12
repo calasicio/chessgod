@@ -14,7 +14,8 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "calasicio@gmail.com",
+      "id": "chessgod@calasicio.com",
+      "update_url": "https://raw.githubusercontent.com/calasicio/chessgod/main/updates.json",
       "data_collection_permissions": {
         "required": ["none"]
       }
