@@ -26,7 +26,7 @@ The code and content in this repository are provided "as is" without any warrant
 
 - [Features](#features)
 - [How to Use](#how-to-use)
-- [Cloning](#cloning)
+- [Running Locally](#running-locally)
 - [Roadmap](#roadmap)
 - [License](#license)
 - [Credits](#credits)
@@ -41,7 +41,36 @@ The code and content in this repository are provided "as is" without any warrant
 
 ## How to Use
 
-## Cloning
+## Running Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/calasicio/chessgod.git
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Build the extension
+
+```bash
+npm run build
+```
+
+### 4. Package the built codebase
+
+```bash
+npm run ext-build
+```
+
+### 5. Use the extension
+
+The file should now be available in `./web-ext-artifacts/chessgod-x.x.x.zip`.
+You can now add that into the Firefox.
 
 ## Roadmap
 
