@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ChessGod",
-  "version": "0.0.1",
+  "version": "0.1.0",
 
   "description": "An extensively configurable chess bot extension for chess.com",
 
