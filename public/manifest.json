@@ -39,10 +39,6 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "icons/icon-48x48.png",
-        "icons/icon-96x96.png",
-        "icons/icon-128x128.png",
-        "icons/icon-512x512.png",
         "vendor/stockfish/stockfish-18-lite-single.wasm"
       ],
       "matches": ["https://*.chess.com/*"]
