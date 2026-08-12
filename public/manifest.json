@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "ChessGod",
+  "version": "0.0.1",
+
+  "description": "An extensively configurable chess bot extension for chess.com",
+
+  "icons": {
+    "48": "icons/icon-48x48.png",
+    "96": "icons/icon-96x96.png",
+    "128": "icons/icon-128x128.png",
+    "512": "icons/icon-512x512.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "calasicio@gmail.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "host_permissions": ["https://*.chess.com/*"],
+
+  "background": {
+    "scripts": ["background/index.js"],
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.chess.com/*"],
+      "js": ["content-scripts/injector.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon-48x48.png",
+        "icons/icon-96x96.png",
+        "icons/icon-128x128.png",
+        "icons/icon-512x512.png",
+        "vendor/stockfish/stockfish-18-lite-single.wasm"
+      ],
+      "matches": ["https://*.chess.com/*"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+}

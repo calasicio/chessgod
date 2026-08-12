@@ -1,0 +1,23 @@
+{
+  "name": "chessgod-extension",
+  "version": "0.0.1",
+  "description": "An extensively configurable chess bot for chess.com",
+  "license": "MIT",
+  "author": "Calasicio",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "ext-build": "web-ext build --source-dir ./dist",
+    "dev": "npm run build -- --watch & web-ext run --source-dir=dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/firefox-webext-browser": "^143.0.0",
+    "chess.js": "^1.4.0",
+    "esbuild": "^0.28.1",
+    "stockfish": "^18.0.8",
+    "typescript": "^7.0.2",
+    "web-ext": "^10.6.0"
+  }
+}
