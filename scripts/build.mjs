@@ -45,6 +45,10 @@ const buildOptions = {
   minify: !watch,
   logLevel: "info",
   plugins: [aliasPlugin],
+  loader: {
+    ".html": "text",
+    ".css": "text",
+  },
 };
 
 async function copyStatic() {

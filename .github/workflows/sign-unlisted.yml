@@ -23,7 +23,7 @@ jobs:
       - name: Build extension
         run: |
           npm ci
-          npm run release
+          npm run ci
 
       - name: Sign with AMO
         env:

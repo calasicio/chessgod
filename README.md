@@ -64,7 +64,7 @@ npm run build
 ### 4. Package the built codebase
 
 ```bash
-npm run ext-build
+npm run package
 ```
 
 ### 5. Use the extension
