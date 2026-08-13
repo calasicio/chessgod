@@ -1,6 +1,6 @@
 {
   "name": "chessgod-extension",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An extensively configurable chess bot for chess.com",
   "license": "MIT",
   "author": "Calasicio",
