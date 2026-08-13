@@ -1,0 +1,94 @@
+<div id="cge">
+  <div class="container">
+    <div id="cge-panel" class="panel">
+      <div class="panel-title">ChessGod</div>
+
+      <label class="field">
+        <span>Show</span>
+        <select data-field="displayMode">
+          <option value="arrows">Arrows only</option>
+          <option value="squares">Squares only</option>
+          <option value="both">Arrows + squares</option>
+        </select>
+      </label>
+
+      <div class="side">
+        <label class="switch">
+          <input type="checkbox" data-field="mine.enabled" />
+          <span>My best move</span>
+        </label>
+        <div class="side-controls">
+          <label class="field">
+            <span>Color</span>
+            <input type="color" data-field="mine.color" />
+          </label>
+          <label class="field">
+            <span>Opacity</span>
+            <input type="range" min="0.1" max="1" step="0.05" data-field="mine.opacity" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Depth (<span id="cge-mine-depth-value"></span>)</span>
+          <input type="range" min="1" max="24" step="1" data-field="mine.depth" />
+        </label>
+        <label class="field">
+          <span>Max think time (<span id="cge-mine-movetimeMs-value"></span>ms)</span>
+          <input type="range" min="100" max="15000" step="100" data-field="mine.movetimeMs" />
+        </label>
+      </div>
+
+      <div class="side">
+        <label class="switch">
+          <input type="checkbox" data-field="enemy.enabled" />
+          <span>Enemy best move</span>
+        </label>
+        <div class="side-controls">
+          <label class="field">
+            <span>Color</span>
+            <input type="color" data-field="enemy.color" />
+          </label>
+          <label class="field">
+            <span>Opacity</span>
+            <input type="range" min="0.1" max="1" step="0.05" data-field="enemy.opacity" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Depth (<span id="cge-enemy-depth-value"></span>)</span>
+          <input type="range" min="1" max="24" step="1" data-field="enemy.depth" />
+        </label>
+        <label class="field">
+          <span>Max think time (<span id="cge-enemy-movetimeMs-value"></span>ms)</span>
+          <input type="range" min="100" max="15000" step="100" data-field="enemy.movetimeMs" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn" data-action="restart-game">
+          Restart game
+        </button>
+        <button type="button" class="btn btn-danger" data-action="restart-engine">
+          Restart engine
+        </button>
+      </div>
+    </div>
+
+    <div class="fab-wrap">
+      <button id="cge--fab" class="fab" type="button">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          data-glyph="utility-cogwheel"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="currentColor"
+            d="M9.57 20.5298L8.4 21.7998C8.03 22.1998 7.73 22.2298 7.27 21.9698L5.74 21.0998C5.27 20.8298 5.17 20.5298 5.31 20.0298L5.84 18.3598C5.97 17.8598 5.94 17.4898 5.67 17.0298L4.5 14.9598C4.23 14.4898 3.93 14.2898 3.43 14.1598L1.7 13.7598C1.2 13.6298 1 13.3898 1 12.8598V11.0898C1 10.5898 1.2 10.3598 1.7 10.2198L3.43 9.81985C3.93 9.68985 4.23 9.48985 4.5 9.01985L5.67 6.94985C5.94 6.47985 5.97 6.11985 5.84 5.61985L5.31 3.94985C5.18 3.44985 5.28 3.14985 5.74 2.87985L7.27 2.00985C7.74 1.73985 8.04 1.77985 8.4 2.17985L9.57 3.44985C9.94 3.84985 10.27 3.97985 10.8 3.97985H13.23C13.73 3.97985 14.06 3.84985 14.43 3.44985L15.6 2.17985C15.97 1.77985 16.27 1.74985 16.73 2.00985L18.26 2.87985C18.73 3.14985 18.83 3.44985 18.69 3.94985L18.16 5.61985C18.03 6.11985 18.06 6.48985 18.33 6.94985L19.5 9.01985C19.77 9.48985 20.07 9.68985 20.57 9.81985L22.3 10.2198C22.8 10.3498 23 10.5898 23 11.0898V12.8598C23 13.3898 22.8 13.6298 22.3 13.7598L20.57 14.1598C20.07 14.2898 19.77 14.4898 19.5 14.9598L18.33 17.0298C18.06 17.4998 18.03 17.8598 18.16 18.3598L18.69 20.0298C18.82 20.5298 18.72 20.8298 18.26 21.0998L16.73 21.9698C16.26 22.2398 15.96 22.1998 15.6 21.7998L14.43 20.5298C14.06 20.1298 13.73 19.9998 13.23 19.9998H10.8C10.27 19.9998 9.93 20.1298 9.57 20.5298ZM12.03 15.4998C13.93 15.4998 15.53 13.9298 15.53 11.9698C15.53 10.0698 13.93 8.49985 12.03 8.49985C10.1 8.49985 8.53 10.0698 8.53 11.9698C8.53 13.9398 10.1 15.4998 12.03 15.4998Z"
+          ></path>
+        </svg>
+      </button>
+      <div id="cge-loader" class="cge-loader"></div>
+    </div>
+  </div>
+</div>

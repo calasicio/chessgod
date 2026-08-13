@@ -72,7 +72,6 @@ function isStale(entry: SideCache | null, fen: string, side: Settings["mine"]): 
 
 function render(
   results: { bestMove: string; color: string; opacity: number }[],
-  userColor: ChessColor,
   displayMode: string,
 ): void {
   if (results.length === 0) {
@@ -88,7 +87,7 @@ function render(
 
   results.forEach((result, index) => {
     const options = { color: result.color, opacity: result.opacity, clear: index === 0 };
-    if (showArrows) showArrow(result.bestMove, userColor, options);
+    if (showArrows) showArrow(result.bestMove, options);
     if (showSquares) showHighlightTiles(result.bestMove, options);
   });
 }
@@ -149,7 +148,7 @@ async function renderSuggestions(ui: ReturnType<typeof injectPanel>): Promise<vo
   if (needsMine || needsEnemy) {
     if (needsMine) cache.mine = null;
     if (needsEnemy) cache.enemy = null;
-    if (isCurrent()) render(buildResults(settings), userColor, settings.displayMode);
+    if (isCurrent()) render(buildResults(settings), settings.displayMode);
 
     ui?.setLoading(true);
     ui?.setStatus("Analyzing…");
@@ -177,7 +176,7 @@ async function renderSuggestions(ui: ReturnType<typeof injectPanel>): Promise<vo
   if (isCurrent()) {
     ui?.setLoading(false);
     ui?.setStatus("ChessGod");
-    render(buildResults(settings), userColor, settings.displayMode);
+    render(buildResults(settings), settings.displayMode);
   }
 }
 

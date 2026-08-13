@@ -86,20 +86,6 @@ function squareToPoint(square: string): { x: number; y: number } {
   };
 }
 
-function flipSquare(square: string): string {
-  const fileChar = square[0];
-  const rankChar = square[1];
-  if (fileChar === undefined || rankChar === undefined) {
-    throw new Error(`flipSquare: invalid square "${square}"`);
-  }
-
-  const file = fileChar.charCodeAt(0) - 97;
-  const rank = parseInt(rankChar, 10) - 1;
-  const flippedFile = String.fromCharCode(97 + (7 - file));
-  const flippedRank = 8 - rank;
-  return `${flippedFile}${flippedRank}`;
-}
-
 function rotation(
   from: { x: number; y: number },
   to: { x: number; y: number },
@@ -172,7 +158,6 @@ export function clearAllArrows(): void {
 
 export function showArrow(
   uciMove: string,
-  myColor: "w" | "b",
   { color, opacity = 0.85, clear = true }: RenderOptions,
 ): void {
   const boardEl = document.querySelector(".board");
@@ -184,13 +169,8 @@ export function showArrow(
     throw new Error(`showArrow: malformed UCI move "${uciMove}"`);
   }
 
-  let fromSq = uciMove.slice(0, 2);
-  let toSq = uciMove.slice(2, 4);
-
-  if (myColor === "b") {
-    fromSq = flipSquare(fromSq);
-    toSq = flipSquare(toSq);
-  }
+  const fromSq = uciMove.slice(0, 2);
+  const toSq = uciMove.slice(2, 4);
 
   const svg = ensureOverlay(boardEl);
   if (clear) clearArrows(svg);
